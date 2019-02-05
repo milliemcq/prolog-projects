@@ -5,6 +5,6 @@
 % to the head of our accumulator. Then you repeat this for the remainder of the list
 % you have.
 
-reverse_list(L1, L2) :- rev_accu(L1, [], L2).
-rev_accu(L1, Ac, [H2|T2]) :- rev_accu(L1, [H2|Ac], T2).
-rev_accu(Ac, Ac, []).
+reverse_list(L,L1):-reverse_list(L,[],L1).
+reverse_list([],ACC,ACC).
+reverse_list([X|L], ACC,L1):- reverse_list(L,[X|ACC],L1).
