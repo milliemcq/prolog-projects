@@ -3,5 +3,5 @@ del(X,[X|Tail],Tail).
 del(X,[Y|Tail],[Y|Tail1]):-
     del(X,Tail,Tail1).
 
-my_insert(X,[Y|Tail],[Y|Tail1]):-
-  del()
+% You can use delete to insert into a list like so
+% del(a, L, [1, 2, 3]).
