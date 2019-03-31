@@ -13,3 +13,10 @@ evenlength([First|Rest]):-
 
 oddlength([First|Rest]):-
   evenlength(Rest)
+
+
+reverse([],[]).
+
+reverse([First|Last], Reversed):-
+  reverse(Last, ReversedLast),
+  conc(ReversedLast, [First], Last).
