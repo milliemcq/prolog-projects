@@ -25,4 +25,4 @@ reverse([],[]).
 
 reverse([First|Last], Reversed):-
   reverse(Last, ReversedLast),
-  conc(ReversedLast, [First], Last).
+  conc(ReversedLast, [First], Reversed).
