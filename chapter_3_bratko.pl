@@ -9,4 +9,4 @@ delete_last_three(L, L1):-
 
 % 3.2 - Get last element from list
 last(Item, List):-
-    conc(_ , [Item], List).
+    conc(_, [Item], List).
