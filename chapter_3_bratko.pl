@@ -23,7 +23,7 @@ oddlength([_|Rest]):-
 % 3.4 Define a relation that reverses a list
 reverse([], []).
 
-reverse([First|Rest], Reversed]):-
+reverse([First|Rest], Reversed):-
   reverse(Rest, ReversedRest),
   conc(ReversedRest, [First], Reversed).
 
