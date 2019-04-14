@@ -26,4 +26,10 @@ reverse([], []).
 reverse([First|Rest], Reversed]):-
   reverse(Rest, ReversedRest),
   conc(ReversedRest, [First], Reversed).
-  
+
+% 3.5 Define the predicate Palindrome, a list is palindromic if it reads forwards and backwards the same
+palindrome([], []).
+
+palindrome([First|Rest]):-
+  reverse(Rest, [End| ReversedRest]]),
+  End = First.
