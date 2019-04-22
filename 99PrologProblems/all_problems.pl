@@ -10,4 +10,4 @@ last_but_one(X, [X, _]).
 last_but_one(X, [_|L]):-
   last_but_one(X, L).
 
-% 03 - 
+% 03 - Find the Kth element of a List
