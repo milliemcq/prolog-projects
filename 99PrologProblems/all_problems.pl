@@ -14,3 +14,9 @@ last_but_one(X, [_|L]):-
 find_k_elem(X,  [X | _], 1).
 
 find_k_elem(X, [_|L], K):- K1 is K-1, find_k_elem(X, L, K1).
+
+% 04 - Find the number of elements in a list
+num_elems([], 0).
+
+num_elems([_|T], N):-
+  N is N1+1, num_elems(T, N1).
