@@ -22,3 +22,6 @@ num_elems([_|T], N):-
   num_elems(T, N1), N is 1 + N1.
 
 % 05 - Reverse a list
+reverse_list(X, [X]).
+
+reverse_list()
