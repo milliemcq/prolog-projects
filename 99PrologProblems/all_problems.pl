@@ -11,3 +11,6 @@ last_but_one(X, [_|L]):-
   last_but_one(X, L).
 
 % 03 - Find the Kth element of a List
+find_k_elem(X,  [X | _], 1).
+
+find_k_elem(X, [_|L], K):- K1 is K-1, find_k_elem(X, L, K1).
