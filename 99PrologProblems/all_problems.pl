@@ -33,4 +33,4 @@ append([X|L1], L2, [X|L3]):-
 reverse_list([], []).
 
 reverse_list([H|L1], L3):-
-    reverse_list(L1, L3), append(L1, [H], L3).
+    reverse_list(L1, Rest), append(Rest, [H], L3).
