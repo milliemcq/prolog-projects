@@ -24,4 +24,5 @@ num_elems([_|T], N):-
 % 05 - Reverse a list
 reverse_list(X, [X]).
 
-reverse_list()
+reverse_list([X|L1], L2):-
+  reverse_list(L1, [L2|X]).
