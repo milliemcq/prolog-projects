@@ -21,14 +21,16 @@ num_elems([], 0).
 num_elems([_|T], N):-
   num_elems(T, N1), N is 1 + N1.
 
-% 05 - Reverse a list
-reverse_list(X, [X]).
 
-reverse_list([X|L1], L2):-
-  reverse_list(L1, [L2|X]).
 
 % Append Clause - For use in other definitions
 append([], L, L).
 
 append([X|L1], L2, [X|L3]):-
   append(L1, L2, L3).
+
+% 05 - Reverse a list
+reverse_list(X, [X]).
+
+reverse_list([X|L1], L2):-
+  reverse_list(L1, [L2|X]).
