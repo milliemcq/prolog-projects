@@ -30,7 +30,7 @@ append([X|L1], L2, [X|L3]):-
   append(L1, L2, L3).
 
 % 05 - Reverse a list
-reverse_list(X, [X]).
+reverse_list([], []).
 
-reverse_list([X|L1], L2):-
-  reverse_list(L1, [L2|X]).
+reverse_list([H|L1], L3):-
+    reverse_list(L1, L3), append(L1, [H], L3).
