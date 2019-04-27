@@ -34,3 +34,6 @@ reverse_list([], []).
 
 reverse_list([H|L1], L3):-
     reverse_list(L1, Rest), append(Rest, [H], L3).
+
+% 06 - Find out if a list is a palindrome
+palindrome(List):- reverse_list(List, List).
