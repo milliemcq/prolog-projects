@@ -37,3 +37,5 @@ reverse_list([H|L1], L3):-
 
 % 06 - Find out if a list is a palindrome
 palindrome(List):- reverse_list(List, List).
+
+% 07 - Flatten a nestest list structure
