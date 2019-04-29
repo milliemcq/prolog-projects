@@ -21,8 +21,6 @@ num_elems([], 0).
 num_elems([_|T], N):-
   num_elems(T, N1), N is 1 + N1.
 
-
-
 % Append Clause - For use in other definitions
 append([], L, L).
 
@@ -39,3 +37,9 @@ reverse_list([H|L1], L3):-
 palindrome(List):- reverse_list(List, List).
 
 % 07 - Flatten a nestest list structure
+my_flatten(X,[X]) :- \+ is_list(X).
+my_flatten([],[]).
+my_flatten([X|Xs],Zs) :-
+  my_flatten(X,Y),
+  my_flatten(Xs,Ys),
+  append(Y,Ys,Zs).
