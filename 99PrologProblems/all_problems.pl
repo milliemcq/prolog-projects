@@ -43,3 +43,5 @@ my_flatten([X|Xs],Zs) :-
   my_flatten(X,Y),
   my_flatten(Xs,Ys),
   append(Y,Ys,Zs).
+
+% 08 - Eliminate consequtive duplicate list elements
