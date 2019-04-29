@@ -45,3 +45,7 @@ my_flatten([X|Xs],Zs) :-
   append(Y,Ys,Zs).
 
 % 08 - Eliminate consequtive duplicate list elements
+compress([],[]).
+compress([X],[X]).
+compress([X,X|Xs],Zs) :- compress([X|Xs],Zs).
+compress([X,Y|Ys],[X|Zs]) :- X \= Y, compress([Y|Ys],Zs).
