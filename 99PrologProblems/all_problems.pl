@@ -49,3 +49,11 @@ compress([],[]).
 compress([X],[X]).
 compress([X,X|Xs],Zs) :- compress([X|Xs],Zs).
 compress([X,Y|Ys],[X|Zs]) :- X \= Y, compress([Y|Ys],Zs).
+
+% 09 - Pack Duplicate Elements into sublists
+pack([],[]).
+pack([X|Xs],[Z|Zs]) :- transfer(X,Xs,Ys,Z), pack(Ys,Zs).
+
+transfer(X,[],[],[X]).
+transfer(X,[Y|Ys],[Y|Ys],[X]) :- X \= Y.
+transfer(X,[X|Xs],Ys,[X|Zs]) :- transfer(X,Xs,Ys,Zs).
