@@ -60,13 +60,13 @@ transfer(X,[],[],[X]).
 transfer(X,[Y|Ys],[Y|Ys],[X]) :- X \= Y.
 transfer(X,[X|Xs],Ys,[X|Zs]) :- transfer(X,Xs,Ys,Zs).
 
-% 10 - Run-length encoding of a List
+% 10 - Run-length encoding of a List (Uses pack function)
 encode(L1,L2) :- pack(L1,L), transform(L,L2).
 
 transform([],[]).
 transform([[X|Xs]|Ys],[[N,X]|Zs]) :- length([X|Xs],N), transform(Ys,Zs).
 
-% ?? Taking a slice of a List
+% Taking a slice of a List
 slice([X|_],1,1,[X]).
 
 slice([X|Xs],1,K,[X|Ys]):-
