@@ -79,3 +79,15 @@ slice([_|Xs],I,K,Ys):-
     is I - 1,
     K1 is K - 1,
     slice(Xs,I1,K1,Ys).
+
+
+% Run length encoding own
+pack([],[]).
+pack([X|L1],[Y|L2]):-
+    transfer(X, L1, L3, Y),
+    pack(L2, L3).
+
+transfer(X, [], [], [X]).
+transfer(X, [H|L3], [H|L3], [X]) :- x \= y.
+transfer(X, [X|L1], L2, [X|L3]):-
+    transfer()
