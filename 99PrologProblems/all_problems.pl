@@ -91,3 +91,11 @@ transfer(X, [], [], [X]).
 transfer(X, [H|L3], [H|L3], [X]) :- x \= y.
 transfer(X, [X|L1], L2, [X|L3]):-
     transfer()
+
+%split a list
+msplit([], _, [], []).
+msplit(Xs, 0, [], Xs).
+msplit([X|Xs], N, [X|L1], L2):-
+    N > 0,
+    N1 is N-1,
+    msplit(Xs, N1, L1, L2).
