@@ -99,3 +99,13 @@ msplit([X|Xs], N, [X|L1], L2):-
     N > 0,
     N1 is N-1,
     msplit(Xs, N1, L1, L2).
+
+% P13 - Direct Run Length Encoding
+encode_direct([],[]).
+encode_direct([X|Xs],[Z|Zs]) :- count(X,Xs,Ys,1,Z), encode_direct(Ys,Zs).
+
+count(X,[],[],1,X).
+count(X,[],[],N,[N,X]) :- N > 1.
+count(X,[Y|Ys],[Y|Ys],1,X) :- X \= Y.
+count(X,[Y|Ys],[Y|Ys],N,[N,X]) :- N > 1, X \= Y.
+count(X,[X|Xs],Ys,K,T) :- K1 is K + 1, count(X,Xs,Ys,K1,T).
